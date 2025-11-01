@@ -34,7 +34,7 @@ const menuItems = [
 ];
 
 export function AdminSidebar() {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   const { user } = useAppSelector((state: any) => state.auth);
 
@@ -125,8 +125,8 @@ export function AdminSidebar() {
                   A
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-sidebar-foreground">{user.name}</p>
-                  <p className="text-xs text-sidebar-foreground/70">{user.email}</p>
+                  <p className="text-sm font-medium text-sidebar-foreground">{user?.name || "admin"}</p>
+                  <p className="text-xs text-sidebar-foreground/70">{user?.email || "amar@gmail.com"}</p>
                 </div>
               </div>
             </div>

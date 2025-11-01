@@ -18,6 +18,10 @@ import Notifications from "./pages/admin/Notifications";
 import SMS from "./pages/admin/SMS";
 import Policies from "./pages/admin/Policies";
 import Settings from "./pages/admin/Settings";
+import UsersManagement from "./pages/admin/Users";
+import { AddPlanDialog } from "./components/plans/AddPlan";
+import UserProfilePage from "./pages/admin/AdminUserAnalyticsPage";
+import AdminUserAnalyticsPage from "./pages/admin/AdminUserAnalyticsPage";
 
 const queryClient = new QueryClient();
 
@@ -28,14 +32,21 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Login />} />
+            <Routes>
+            <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<Dashboard />} />
-              <Route path="users" element={<Users />} />
+              <Route path="users/:userId" element={<AdminUserAnalyticsPage />} />
+              <Route path="users" element={<UsersManagement />}/ >
+             
+              
+              <Route/>
               <Route path="payments" element={<Payments />} />
-              <Route path="plans" element={<Plans />} />
+              <Route path="plans" element={<Plans />} > 
+
+             
+              </Route>
               <Route path="tenders" element={<Tenders />} />
               <Route path="analytics" element={<Analytics />} />
               <Route path="notifications" element={<Notifications />} />
@@ -44,7 +55,8 @@ const App = () => (
               <Route path="settings" element={<Settings />} />
             </Route>
             <Route path="*" element={<NotFound />} />
-          </Routes>
+            </Routes>
+            
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

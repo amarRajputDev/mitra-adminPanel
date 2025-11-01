@@ -27,7 +27,7 @@ export function DashboardCard({
     navigate(navigateTo);
   }
   return (
-    <Card className={`shadow-card hover:shadow-card-hover transition-shadow duration-200 animate-fade-in ${navigateTo ? "cursor-pointer" : ""}`} onClick={handleNavigate}>
+    <Card className={`shadow-card hover:shadow-card-hover h-fit transition-shadow duration-200 animate-fade-in ${navigateTo ? "cursor-pointer" : ""}`} onClick={handleNavigate}>
       <CardContent className="p-6">
         <div className="flex items-start justify-between">
           <div className="space-y-2">

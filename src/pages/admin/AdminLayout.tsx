@@ -5,14 +5,15 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 export default function AdminLayout() {
-    const {isLoggedin , user} = useSelector((state:any) => state.auth);
-    const navigate = useNavigate();
+    // const {isLoggedin } = useSelector((state:any) => state.auth);
+    // const navigate = useNavigate();
 
-    useEffect(() => {
-      if(!isLoggedin){
-        navigate('/login');
-      }
-    }, [])
+    // useEffect(() => { 
+    //   console.log("Please Login ....")
+    //   if(!isLoggedin){
+    //     navigate('/login');
+    //   }
+    // }, [])
     
   return (
     <div className="flex min-h-screen w-full">

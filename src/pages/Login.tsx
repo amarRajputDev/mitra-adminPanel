@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Lock, Mail } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "@/store/authSlice";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,15 +17,22 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
 
+  
+
 
   
   
-
-  const handleLogin = (e: React.FormEvent) => {
+ //TODO: Implement actual authentication logic (Currently Not working)
+  const handleLogin = async(e: React.FormEvent) => {
     e.preventDefault();
-    const user = {email , rememberMe , name : "Admin"}; 
+    const user = {email ,  password , name: "Admin"}; 
+    // console.log(user)
+    // const res = await axios.post(`http://localhost:3001/api/admin/login-admin`, user, { withCredentials: true });
+    // console.log("running...")
+    // console.log(res.data.message);
+
     // TODO: Implement actual authentication logic
-    dispatch(login({ user, token: "dummy-admin-token" }));
+    // dispatch(login());
 
     navigate("/admin");
   };
@@ -44,7 +52,7 @@ const Login = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className="p-4 sm:p-6">
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form  className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <div className="relative">
@@ -93,7 +101,7 @@ const Login = () => {
                 Forgot password?
               </Button>
             </div>
-            <Button type="submit" className="w-full mt-2" size="lg">
+            <Button type="submit" onClick={handleLogin} className="w-full mt-2" size="lg">
               Sign In
             </Button>
           </form>
