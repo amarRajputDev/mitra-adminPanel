@@ -91,7 +91,7 @@ export default function PolicyFormDialog({ open, onOpenChange, type, mode, polic
             <Input value={form.title} onChange={e=>setForm(f=>({...f, title:e.target.value}))} placeholder="Privacy Policy – 2025" />
           </div>
           <div>
-            <Label>Body (Markdown/HTML/Text)</Label>
+            <Label> ckEditor</Label>
             <Textarea rows={10} value={form.body} onChange={e=>setForm(f=>({...f, body:e.target.value}))} />
           </div>
           <div className="grid grid-cols-2 gap-3">

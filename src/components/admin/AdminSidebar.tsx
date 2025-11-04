@@ -25,12 +25,12 @@ const menuItems = [
   { title: "Users", icon: Users, path: "/admin/users" },
   { title: "Payments", icon: CreditCard, path: "/admin/payments" },
   { title: "Plans", icon: Package, path: "/admin/plans" },
-  { title: "Tenders", icon: FileText, path: "/admin/tenders" },
-  { title: "Analytics", icon: BarChart3, path: "/admin/analytics" },
+  // { title: "Tenders", icon: FileText, path: "/admin/tenders" },
+  // { title: "Analytics", icon: BarChart3, path: "/admin/analytics" },
   { title: "Notifications", icon: Bell, path: "/admin/notifications" },
-  { title: "SMS Logs", icon: MessageSquare, path: "/admin/sms" },
+  // { title: "SMS Logs", icon: MessageSquare, path: "/admin/sms" },
   { title: "Policies", icon: FileCheck, path: "/admin/policies" },
-  { title: "Settings", icon: Settings, path: "/admin/settings" },
+ 
 ];
 
 export function AdminSidebar() {

@@ -22,10 +22,14 @@ import UsersManagement from "./pages/admin/Users";
 import { AddPlanDialog } from "./components/plans/AddPlan";
 import UserProfilePage from "./pages/admin/AdminUserAnalyticsPage";
 import AdminUserAnalyticsPage from "./pages/admin/AdminUserAnalyticsPage";
+import { registerFcmServiceWorker } from "./swRegister";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () =>{ 
+  registerFcmServiceWorker();
+  
+  return(
   <Provider store={store}>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -61,6 +65,6 @@ const App = () => (
       </TooltipProvider>
     </QueryClientProvider>
   </Provider>
-);
+)};
 
 export default App;
